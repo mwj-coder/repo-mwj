@@ -1,0 +1,27 @@
+p {
+	color: maroon;
+	font-size:25px ;
+}
+h1, h2 {
+	color: grey;
+}
+h1 {
+	border-bottom:1px ,solid ,black;
+}
+
+body {
+	font-family: Arial;
+	font-size: 1em;
+}
+em{
+	font-family: "cascadia mono";
+}
+body{
+	color: royalblue;
+	color: rgb(65, 105, 225);
+	color: #e3b4b8;
+	color: rgba(41, 39, 182, 0.279);
+	color: #2775b6CC;
+}
+a{
+	text-decoration: none;}
