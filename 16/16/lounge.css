@@ -1,0 +1,33 @@
+
+body {
+	font-size: small; /* 新的属性值，请自行了解 */
+	font-family: Verdana,Helvetica,Arial;
+}
+
+h1, h2 {
+	color: #007e7e; /* 将标题设置为一种青绿色，使他和 logo 更相合 */
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+p{
+	margin: 0px;
+	padding: 0%;
+}
+.guarantee{
+	border-color: wheat;
+	border-style: dashed;
+	border-width: 1px;
+	background-color: #a7cece;
+	padding: 25px;
+	margin: 30px;
+	line-height: 1.9em;
+	font-style: italic;
+	color: #444444;
+	font-family: Georgia, 'Times New Roman';
+}

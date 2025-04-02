@@ -44,12 +44,14 @@ p{
 	border-style: solid;
 	border-color: #007e7e;
 	width: 200px;
-	padding-right: 20px;
+	/*padding-right: 20px;
 	padding-bottom: 20px;
 	padding-left: 20px;
-	margin-left: 20px;
-	background-image: url(images/cocktail.gif);
-	background-repeat: repeat-x;
+	margin-left: 20px;*/
+	padding: 20px;
+	/*background-image: url(images/cocktail.gif);
+	background-repeat: repeat-x;*/
+	background: url(images/cocktail.gif) repeat-x;
 	text-align: center;
 	line-height: 1;
 }
