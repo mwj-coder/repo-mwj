@@ -1,11 +1,11 @@
 
 body {
-	font-size: small; /* 新的属性值，请自行了解 */
+	font-size: small;
 	font-family: Verdana,Helvetica,Arial;
 }
 
 h1, h2 {
-	color: #007e7e; /* 将标题设置为一种青绿色，使他和 logo 更相合 */
+	color: #007e7e;
 }
 
 h1 {
@@ -15,46 +15,29 @@ h1 {
 h2 {
 	font-size: 1.3em;
 }
-p{
-	margin: 0px;
-	padding: 0%;
+p {
+	margin: 0;
+	padding: 0;
 }
-.guarantee{
-	border-color: wheat;
-	border-style: dashed;
-	border-width: 1px;
-	background-color: #a7cece;
-	padding: 25px;
-	margin: 30px;
+.guarantee {
+	border: 1px dashed wheat;
+	background: #a7cece url(images/background.gif) no-repeat top left;
+	padding: 25px 0 25px 80px;
+	margin: 30px 250px 30px 30px;
 	line-height: 1.9em;
 	font-style: italic;
 	color: #444444;
 	font-family: Georgia, 'Times New Roman';
-	background-image: url(images/background.gif);
-	background-repeat: no-repeat;
-	background-position: top left;
-	padding: 25px;
-	padding-left: 80px;
-	margin-right: 250px;
-	border-top-right-radius: 15px;
-	border-bottom-left-radius: 15px;
+	border-radius: 0 15px 0 15px;
 }
-.elixirs{
-	border-width: thin;
-	border-style: solid;
-	border-color: #007e7e;
+.elixirs {
+	border: thin solid #007e7e;
 	width: 200px;
-	/*padding-right: 20px;
-	padding-bottom: 20px;
-	padding-left: 20px;
-	margin-left: 20px;*/
 	padding: 20px;
-	/*background-image: url(images/cocktail.gif);
-	background-repeat: repeat-x;*/
 	background: url(images/cocktail.gif) repeat-x;
 	text-align: center;
 	line-height: 1;
 }
-div h2{
+div h2 {
 	color: black;
 }
