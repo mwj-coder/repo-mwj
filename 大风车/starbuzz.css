@@ -9,6 +9,7 @@ body {
   background-color: #675c47;
   margin:           10px;
   height:           108px;
+  animation: rotate 1s linear infinite; 
 }
 
 
@@ -28,6 +29,7 @@ body {
   margin:           0px 10px 10px 10px;
   display: table-cell;
   vertical-align: top;
+  animation: rotate 0.001s linear infinite; 
 }
 
 footer {
@@ -62,25 +64,26 @@ a:visited {
   text-decoration:  none;
   border-bottom:    thin dotted #675c47;
 }
-/* .allcontent {
+.allcontent {
 	width:               800px;
 	padding-top:           5px;
 	padding-bottom:        5px;
 	background-color:  #675c47;
 	margin-left:          auto;
 	margin-right:         auto;
-} */
+  animation: rotate 0.1s linear infinite; 
+}
  /* .sidebar {
 	position:  absolute;
 	top:          100px;
 	right:        200px;
 	width:        280px;
-}  */
+} 
 .main {
 	position: relative;
 	top:           0px;
 	left:        200px;
-} 
+}  */
 div.tablecontainer{
   display: table;
   border-spacing: 10px;
@@ -93,6 +96,7 @@ div.tablerow{
   display: table-row;
   background-color: #efe5d0;
   padding: 15px;
+  animation: rotate 0.01s linear infinite; 
 }
 
 .sprite-container {
@@ -126,6 +130,7 @@ div.tablerow{
 	top: 350px;
 	left: -210px;
   transition: left 3s ease;
+  animation: rotate 0.5s linear infinite; 
 }
 
 .coupon:hover{
@@ -159,34 +164,9 @@ section.main, section.blog {
   font-size:        105%;
   padding:          15px;
   vertical-align: top;
+  animation: rotate 0.01s linear infinite; 
 }
 
-nav {
-  background-color: #efe5d0;
-  margin: 10px 10px 0px 10px;
-}
 
-nav ul {
-	margin: 0px;
-	list-style-type: none;
-	padding: 5px 0px 5px 5px;
-}
 
-nav ul li {
-	display: inline;
-	padding: 5px 10px 5px 10px;
-}
-
-ul li a:link, nav ul li a:visited {
-	color: #954b4b;
-	border-bottom: none;
-	font-weight: bold;
-/*
-	text-shadow: 1px 1px 3px #e2c2c2; 
-	text-transform: uppercase;
-*/
-}
-nav ul li.selected {
-	background-color: #c8b99c;
-}
 
