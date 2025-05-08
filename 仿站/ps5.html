@@ -20,13 +20,9 @@
             padding: 20px;
         }
         
-        .picture {
-            width: 50%;
-        }
-        
         .picture img {
             width: 100%;
-            height: auto;
+            height: 100%;
         }
         
         .choice {
@@ -35,24 +31,38 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            position: relative;
+            position: relative;  
+            white-space: nowrap; /* 防止文本自动换行 */
         }
+        
         
         /* 添加图片尺寸样式 */
         .choice img {
 
-            width: 148px;
-            height: 83px;
+            width: 162px;
+            height: 91px;
             margin: 5px;
+            padding: 14px;
         }
         
 
         .a{
-        color: blue;
+            color: rgb(0, 112, 204);
         }
         .b{
-        font-weight: 200; /* 添加细字体权重 */
+            font-weight: 200; /* 添加细字体权重 */
+            padding-top:20px;
+            padding-bottom:20px ;
         }
+        .detailed{
+            color: beige;
+            background-color:rgb(0, 112, 204);
+            padding: 10px 24px 10px 24px;
+            border-radius: 24px;
+            display: inline-block;
+        }
+
+
     </style>
 </head>
 <body>
@@ -61,6 +71,10 @@
             <h1>PS5の本体と周辺機器をご紹介</h1>
             <div class="a">PlayStation 5本体</div>
                 <div class="b">新世代の驚きに満ちたPlayStationタイトルを体験しよう</div>
+                <div> 
+                <div class="detailed"> 詳細を見る </div> <div class="detailed"> ラインナップを見る </div>
+                </div>
+
         </div>
         
         <div class="picture">
