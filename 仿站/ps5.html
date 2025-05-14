@@ -7,98 +7,136 @@
     <link href="ps5.css">
     <style>
         .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 50px auto 20px; /* 增加上边距 */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            width: 80%;                /* 设置容器宽度为页面的80% */
+            max-width: 1200px;         /* 设置容器最大宽度，防止在大屏幕上过宽 */
+            margin: 50px auto 20px;    /* 设置上下外边距，并水平居中 */
+            display: flex;             /* 使用弹性布局 */
+            justify-content: space-between; /* 子元素两端对齐 */
+            align-items: center;       /* 子元素垂直居中 */
         }
 
         .text-content {
-            width: 45%;
-            padding: 20px;
+            width: 45%;               /* 设置文本内容区域宽度 */
+            padding: 20px;            /* 设置内边距 */
         }
 
         .picture img {
-            width: 100%;
-            height: 100%;
+            width: 100%;              /* 图片宽度占满父容器 */
+            height: 100%;             /* 图片高度占满父容器 */
         }
 
         .choice {
-            width: 80%;
-            margin-top: 30px; /* 增加与上方内容的间距 */
-            display: flex;
-            justify-content: center;
-            flex-wrap: nowrap; /* 修改为不换行 */
+            margin-top: 30px;         /* 与上方内容的间距 */
+            display: flex;            /* 使用弹性布局 */
+            justify-content: center;  /* 水平居中对齐 */
+            flex-wrap: nowrap;        /* 防止子元素换行 */
+            position: relative;       /* 相对定位，作为滚动按钮的参考点 */
+        }
+        
+        /* 左右滚动按钮样式 */
+        .scroll-btn {
+            position: absolute;       /* 绝对定位 */
+            top: 50%;                 /* 垂直居中 */
+            transform: translateY(-50%); /* 精确垂直居中 */
+            width: 40px;              /* 按钮宽度 */
+            height: 40px;             /* 按钮高度 */
+            background-color: rgb(0, 112, 204); /* 蓝色背景 */
+            border-radius: 50%;       /* 圆形按钮 */
+            display: flex;            /* 使用弹性布局使内容居中 */
+            justify-content: center;  /* 水平居中 */
+            align-items: center;      /* 垂直居中 */
+            color: white;             /* 文字颜色 */
+            font-weight: bold;        /* 文字加粗 */
+            cursor: pointer;          /* 鼠标悬停时显示手型 */
+            z-index: 10;              /* 确保按钮在其他元素上方 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+        }
+        
+        .scroll-btn:hover {
+            background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
+        }
+        
+        .scroll-left {
+            left: 10px;               /* 左侧按钮位置 */
+        }
+        
+        .scroll-right {
+            right: 10px;              /* 右侧按钮位置 */
         }
 
         .block {
-            display: inline-block;
-            text-align: center;
-            margin: 0 5px;
-            width: 162px;
-            flex-shrink: 0; /* 防止元素被压缩 */
+            display: inline-block;    /* 行内块元素 */
+            text-align: center;       /* 文本居中 */
+            margin: 0 5px;            /* 左右外边距 */
+            width: 213px;             /* 块宽度 */
+            height: 147px;            /* 块高度 */
+            flex-shrink: 0;           /* 防止元素被压缩 */
         }
 
         .text {
-            white-space: normal; /* 允许文本正常换行 */
-            font-size: 14px;
-            margin-top: 5px;
+            white-space: normal;      /* 允许文本正常换行 */
+            font-size: 14px;          /* 文字大小 */
+            margin-top: 5px;          /* 上方外边距 */
+            font-weight: 300;         /* 细字体 */
+            color: #333;              /* 文字颜色 */
         }
 
-        /* 添加图片尺寸样式 */
+        /* 图片样式 */
         .choice img {
-            width: 162px;
-            height: 91px;
-            margin: 5px;
-            padding: 14px;
-            border-radius: 14px; /* 轻微圆角 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加灰色朦胧的阴影 */
-            transition: all 0.3s ease; /* 添加过渡效果 */
+            width: 162px;             /* 图片宽度 */
+            height: 91px;             /* 图片高度 */
+            margin: 5px;              /* 外边距 */
+            padding: 14px;            /* 内边距 */
+            border-radius: 14px;      /* 圆角效果 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            transition: all 0.3s ease; /* 过渡动画 */
         }
         
         .choice img:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停时阴影更明显 */
-            transform: translateY(-3px); /* 轻微上浮效果 */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
+            transform: translateY(-3px); /* 悬停时轻微上浮 */
         }
 
-
-        .a{
-            color: rgb(0, 112, 204);
-        }
-        .b{
-            font-weight: 200; /* 添加细字体权重 */
-            padding-top:20px;
-            padding-bottom:20px;
+        .a {
+            color: rgb(0, 112, 204);  /* 蓝色文字 */
         }
 
-        /* 添加按钮容器样式 */
+        .b {
+            font-weight: 200;         /* 细字体 */
+            padding-top: 20px;        /* 上内边距 */
+            padding-bottom: 20px;     /* 下内边距 */
+        }
+
+        /* 按钮容器样式 */
         .button-container {
-            display: flex;
+            display: flex;            /* 弹性布局 */
         }
 
-        .detailed{
-            color: beige;
-            background-color:rgb(0, 112, 204);
-            padding: 10px 24px 10px 24px;
-            border-radius: 40px;
-            transition: all 0.3s ease; /* 添加过渡效果 */
-            cursor: pointer; /* 鼠标变为手型 */
-            margin-right: 10px; /* 按钮之间的间距 */
-            border: 2px solid transparent; /* 透明边框，为悬停效果做准备 */
+        .detailed {
+            color: beige;             /* 文字颜色 */
+            background-color: rgb(0, 112, 204); /* 背景色 */
+            padding: 10px 24px;       /* 内边距 */
+            border-radius: 40px;      /* 圆角效果 */
+            transition: all 0.3s ease; /* 过渡动画 */
+            cursor: pointer;          /* 鼠标悬停时显示手型 */
+            margin-right: 10px;       /* 右侧外边距 */
+            border: 2px solid transparent; /* 透明边框 */
         }
         
         .detailed:hover {
-            background-color: rgb(0, 90, 170); /* 颜色变深 */
-            border: 2px solid white; /* 白色边框 */
-            box-shadow: 0 0 8px rgba(0,112,204); /* 蓝色光晕效果 */
+            background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
+            border: 2px solid white;  /* 悬停时显示白色边框 */
+            box-shadow: 0 0 8px rgba(0,112,204); /* 悬停时添加蓝色光晕 */
         }
 .block{
     width: 213px;
     height: 147px;
 }
-
+.text{
+    font-weight: 300; /* 添加细字体 */
+    color: #333;
+    font-size: 14px;
+}
     </style>
 </head>
 <body>
@@ -122,6 +160,7 @@
     </div>
 
     <div class="choice">
+        <div class="scroll-btn scroll-left"><</div>
         <div class="block">
             <img src="img/ps5 pro.webp">
             <div class="text"> PS5本体 </div>
@@ -166,6 +205,7 @@
             <img src="img/hd.webp">
             <div class="text"> PS5用カバー </div>
         </div>
+        <div class="scroll-btn scroll-right">></div>
     </div>
 </body>
 </html>

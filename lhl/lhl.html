@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+            color: white;
+        }
+        
+        .Background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 305px;
+            z-index: -1; /* 将背景置于内容之后 */
+            overflow: hidden;
+        }
+        
+        .Background img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex; /* 添加flex布局 */
+            align-items: center; /* 垂直居中对齐 */
+            justify-content: space-between; /* 两端对齐 */
+        }
+        
+        .introduce {
+            width: 60%; /* 控制介绍部分的宽度 */
+            color: #000; /* 将文字颜色改为黑色 */
+        }
+        
+        /* 可以为按钮单独设置颜色，保持白色 */
+        .button {
+            background-color: rgba(0, 112, 204, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .Image {
+            width: 212px;
+            height: 110px;
+            order: 2; /* 调整顺序，放在右边 */
+        }
+        
+        /* 其他样式保持不变 */
+        .Image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 保持图片比例 */
+        }
+        
+        .title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold; /* 添加粗体样式 */
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <div class="Background">
+        <img src="img/30th-anniversary-hub-background-desktop-04-en-02oct24.webp">
+    </div>
+    
+    <div class="content">
+        <div class="introduce">
+            <div class="title">
+                PlayStationの30年
+            </div>
+            <div class="description">
+                30周年を記念して、PlayStationの歴史と数々のゲーム機本体やゲームを巡る「思い出」を公開中。ぜひ一緒にお祝いしましょう
+            </div>
+            <div class="buttons">
+                <div class="button">お祝いに参加する</div>
+                <div class="button">思い出を振り返る</div>
+            </div>
+        </div>
+        
+        
+        <div class="Image">
+            <img src="img/30th-anniversary-logo-01-en-21aug24 (1).webp">
+        </div>
+    </div>
+
+</body>
+</html>
