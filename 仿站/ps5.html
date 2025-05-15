@@ -90,21 +90,40 @@
             border-radius: 14px;      /* 圆角效果 */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
             transition: all 0.3s ease; /* 过渡动画 */
+            opacity: 0.6;             /* 默认状态下图片半透明 */
         }
         
-        .choice img:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停时阴影加深 */
-            transform: translateY(-3px); /* 悬停时轻微上浮 */
+        .choice .block:hover img,
+        .choice .block:focus img {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* 悬停或选中时阴影加深 */
+            transform: translateY(-3px); /* 悬停或选中时轻微上浮 */
+            opacity: 1;               /* 恢复完全不透明 */
         }
 
-        .a {
-            color: rgb(0, 112, 204);  /* 蓝色文字 */
+        .block {
+            display: inline-block;    /* 行内块元素 */
+            text-align: center;       /* 文本居中 */
+            margin: 0 5px;            /* 左右外边距 */
+            width: 213px;             /* 块宽度 */
+            height: 147px;            /* 块高度 */
+            flex-shrink: 0;           /* 防止元素被压缩 */
+            cursor: pointer;          /* 鼠标指针变为手型 */
+            outline: none;            /* 移除默认的焦点轮廓 */
+            position: relative;       /* 为伪元素提供定位参考 */
+            border: 2px solid transparent; /* 初始透明边框 */
+            transition: border-color 0.3s ease; /* 边框颜色过渡效果 */
         }
 
-        .b {
-            font-weight: 200;         /* 细字体 */
-            padding-top: 20px;        /* 上内边距 */
-            padding-bottom: 20px;     /* 下内边距 */
+        .block:focus {
+            border-color: rgb(0, 112, 204); /* 选中时边框变为蓝色 */
+        }
+
+        .text {
+            white-space: normal;      /* 允许文本正常换行 */
+            font-size: 14px;          /* 文字大小 */
+            margin-top: 5px;          /* 上方外边距 */
+            font-weight: 300;         /* 细字体 */
+            color: #333;              /* 文字颜色 */
         }
 
         /* 按钮容器样式 */
@@ -128,15 +147,24 @@
             border: 2px solid white;  /* 悬停时显示白色边框 */
             box-shadow: 0 0 8px rgba(0,112,204); /* 悬停时添加蓝色光晕 */
         }
-.block{
-    width: 213px;
-    height: 147px;
-}
 .text{
     font-weight: 300; /* 添加细字体 */
     color: #333;
     font-size: 14px;
 }
+.a {
+            color: rgb(0, 112, 204);  /* 蓝色文字 */
+            font-size: 14px;          /* 减小字体大小 */
+            margin-bottom: 5px;       /* 添加下边距 */
+        }
+
+        .b {
+            font-weight: 200;         /* 细字体 */
+            padding-top: 15px;        /* 减小上内边距 */
+            padding-bottom: 15px;     /* 减小下内边距 */
+            font-size: 16px;          /* 减小字体大小 */
+            line-height: 1.4;         /* 调整行高 */
+        }
     </style>
 </head>
 <body>
@@ -161,47 +189,47 @@
 
     <div class="choice">
         <div class="scroll-btn scroll-left"><</div>
-        <div class="block">
+        <div class="block" tabindex="0">
             <img src="img/ps5 pro.webp">
             <div class="text"> PS5本体 </div>
         </div>
-        <div class="block">
+        <div class="block" tabindex="0">
             <img src="img/ps5.webp">
             <div class="text"> PS5 Pro </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/dualseree.webp">
             <div class="text"> DualSense ワイヤレスコントローラー </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/playstation.webp">
             <div class="text"> DualSense ワイヤレスコントローラー </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/pulse.webp">
             <div class="text"> PULSE Elite ワイヤレスヘッドセット </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/pulse explore.webp">
             <div class="text"> PULSE Explore ワイアレスイヤホン </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/dualsense edge.webp">
             <div class="text"> DualSense Edge </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/access.webp">
             <div class="text"> DualSense Edge </div>
         </div>
-        <div class="block">
+        <div class="block"  tabindex="0">
             <img src="img/ps5-console.webp">
             <div class="text"> DualSense Edge </div>
         </div>
-        <div class="block">
+        <div class="block" tabindex="0">
             <img src="img/ps5  .webp">
             <div class="text"> Access コントローラー </div>
         </div>
-        <div class="block">
+        <div class="block" tabindex="0">
             <img src="img/hd.webp">
             <div class="text"> PS5用カバー </div>
         </div>
@@ -209,3 +237,4 @@
     </div>
 </body>
 </html>
+
