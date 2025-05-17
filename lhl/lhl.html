@@ -14,11 +14,12 @@
         
         .content-wrapper {
             position: relative;   /* 相对定位 */
-            width: 100%;          /* 宽度占满父容器 */
+            width: 100%;          /* 图片宽度占满父容器 */
+            height: 100%;         /* 图片高度占满父容器 */
             background-image: url("img/30th-anniversary-hub-background-desktop-04-en-02oct24.webp"); /* 直接设置背景图片 */
-
+            background-size: contain; /* 保持背景图片比例，确保完全显示 */
         }
-        
+
         
         .content {
             position: relative;   /* 相对定位 */
@@ -61,31 +62,31 @@
         .background {
             position: relative;   /* 相对定位 */
             height: 527px;
-            margin: 0  auto;       /* 水平居中 */
+            margin: 0 auto;       /* 水平居中 */
             display: flex;        /* 弹性布局 */
             align-items: center;  /* 垂直居中对齐 */
-            justify-content: flex-start; /* 左对齐 */
             background-image: url("img/image.png"); /* 设置背景图片 */
             background-size: cover; /* 背景图片覆盖整个容器 */
             background-position: center; /* 背景图片居中 */
-            height: 300px;         /* 设置高度 */
             padding: 20px;         /* 内边距 */
             color: white;          /* 文字颜色 */
-            text-align: left;      /* 文本左对齐 */
         }
 
         .background .text {
             font-size: 24px;       /* 字体大小 */
             line-height: 1.5;      /* 行高 */
             margin-right: 20px;    /* 右侧外边距 */
+            margin: 0 auto;       /* 水平居中 */
+            text-align: left;      /* 文本左对齐 */
+            padding-right: 40%;     /* 左侧内边距，调整居中偏左 */
         }
         .a{
             background-color: #26254f;
             height: 426px;
             display: flex;            /* 使用弹性布局 */
             flex-direction: row;      /* 水平排列子元素 */
-            align-items: flex-start;  /* 子元素顶部对齐 */
-            justify-content: space-around; /* 子元素均匀分布 */
+            align-items: center;      /* 垂直居中对齐 */
+            justify-content: center;  /* 水平居中对齐 */
             flex-wrap: wrap;          /* 允许换行 */
 
         }
@@ -102,13 +103,14 @@
         .a img{
             width: 209px;
             height: 117px;
-            border-radius: 30px;
+            border-radius: 12px;
 
         }
         .b{
             width: 223px;
             height: 207px;
         }
+     
     </style>
 </head>
 <body>
