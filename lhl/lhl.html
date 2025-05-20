@@ -4,192 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            margin: 0;            /* 移除body默认外边距 */
-            padding: 0;           /* 移除body默认内边距 */
-            font-family: Arial, sans-serif;  /* 设置字体 */
-            position: relative;   /* 相对定位，作为子元素的参考点 */
-        }
-        
-        .content-wrapper {
-            position: relative;   /* 相对定位 */
-            width: 100%;          /* 图片宽度占满父容器 */
-            height: 100%;         /* 图片高度占满父容器 */
-            background-image: url("img/30th-anniversary-hub-background-desktop-04-en-02oct24.webp"); /* 直接设置背景图片 */
-            background-size: contain; /* 保持背景图片比例，确保完全显示 */
-            user-select: none;
-        }
-
-        
-        .content {
-            position: relative;   /* 相对定位 */
-            height: 433px;
-            z-index: 1;           /* 层级设为1 */
-            max-width: 1200px;    /* 最大宽度限制 */
-            margin: 0 auto;       /* 水平居中 */
-            display: flex;        /* 弹性布局 */
-            align-items: center;  /* 垂直居中对齐 */
-            justify-content: space-between; /* 两端对齐 */
-            white-space: nowrap;  /* 防止换行 */
-            overflow: hidden;     /* 隐藏溢出内容 */
-        }
-        
-        .button {
-            all: unset;               /* 重置所有继承的样式 */
-            display: inline-block;    /* 设置为行内块元素 */
-            background-color: #0070cc; /* 设置背景色为蓝色 */
-            color: white;              /* 文字颜色为白色 */
-            padding: 10px 20px;        /* 上下10px，左右20px的内边距 */
-            border-radius: 20px;       /* 圆角效果 */
-            cursor: pointer;           /* 鼠标悬停时显示手型 */
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-            text-align: center;        /* 文字居中 */
-
-        }
-
-        .button:hover {
-            background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
-            border: 2px solid white;  /* 悬停时显示白色边框 */
-            box-shadow: 0 0 8px rgba(0,112,204); /* 悬停时添加蓝色光晕 */
-        }
-        
-        .Image {
-            width: 1000px;         /* 设置宽度 */
-            height: 237px;        /* 设置高度 */
-            order: 2;             /* 在flex布局中排在第二位 */
-        }
-        
-        .Image img {
-            width: 100%;          /* 图片宽度占满父容器 */
-            height: 100%;         /* 图片高度占满父容器 */
-            object-fit: contain;  /* 保持图片比例，确保完全显示 */
-        }
-        
-        .title {
-            font-size: 24px;      /* 字体大小 */
-            margin-bottom: 15px;  /* 下方外边距 */
-            font-weight: bold;    /* 粗体文字 */
-            display: flex;        /* 弹性布局 */
-        }
-        .background {
-            position: relative;   /* 相对定位 */
-            height: 527px;
-            margin: 0 auto;       /* 水平居中 */
-            display: flex;        /* 弹性布局 */
-            align-items: center;  /* 垂直居中对齐 */
-            background-image: url("img/image.png"); /* 设置背景图片 */
-            background-size: cover; /* 背景图片覆盖整个容器 */
-            background-position: center; /* 背景图片居中 */
-            padding: 20px;         /* 内边距 */
-            color: white;          /* 文字颜色 */
-        }
-
-        .background .text {
-            font-size: 24px;       /* 字体大小 */
-            line-height: 1.5;      /* 行高 */
-            margin-right: 20px;    /* 右侧外边距 */
-            margin: 0 auto;       /* 水平居中 */
-            text-align: left;      /* 文本左对齐 */
-            padding-right: 40%;     /* 左侧内边距，调整居中偏左 */
-        }
-        .a{
-            background-color: #26254f;
-            height: 426px;
-            display: flex;            /* 使用弹性布局 */
-            flex-direction: row;      /* 水平排列子元素 */
-            align-items: center;      /* 垂直居中对齐 */
-            justify-content: center;  /* 水平居中对齐 */
-            flex-wrap: wrap;          /* 允许换行 */
-        }
-
-        .text-a {
-            align-self: center;       /* 垂直居中对齐 */
-            margin-top: auto;         /* 位于底部 */
-            padding: 14px;            /* 内边距 */
-            font-size: 14px;          /* 文字大小 */
-            color: black;             /* 文字颜色 */
-            background-color: white; /* 背景色 */
-            padding: 10px 24px;       /* 内边距 */
-            border-radius: 40px;      /* 圆角效果 */
-            cursor: pointer;          /* 鼠标悬停时显示手型 */
-            margin-right: 10px;       /* 右侧外边距 */
-            border: 2px solid transparent; /* 透明边框 */
-            font-weight: 600;         /* 细字体 */
-        }
-        .text-a:hover {
-            border: 2px solid #26254f;  /* 悬停时显示白色边框 */
-            box-shadow: 0 0 8px white; /* 悬停时添加蓝色光晕 */
-        }
-        .a > div {
-            display: flex;
-            flex-direction: column;   /* 垂直排列图片和文字 */
-            align-items: center;      /* 水平居中对齐 */
-            margin: 10px;             /* 子元素间距 */
-        }
-        .a .text{
-            font-size: 16px;       /* 固定字体大小 */
-            color: white; 
-        }
-        .a img{
-            width: 209px;
-            height: 117px;
-            border-radius: 12px;
-
-        }
-        .b{
-            width: 490px;
-            height: 338px;
-            transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* 添加过渡效果 */
-            
-        }
-        .b img{
-            width: 450px;
-            height: 238px;
-        }
-
-        .b:hover {
-            transform: translateY(-10px); /* 上浮效果 */
-            background-color: rgba(0, 0, 0, 0.5); /* 背景变暗 */
-            border: 2px solid white; /* 白色边框 */
-            border-radius: 12px; /* 圆角效果 */
-        }
-        .c{
-            background-color: #26254f;
-            display: flex;            /* 使用弹性布局 */
-            flex-direction: row;      /* 水平排列子元素 */
-            align-items: center;      /* 垂直居中对齐 */
-            justify-content: center;  /* 水平居中对齐 */
-            flex-wrap: wrap;          /* 允许换行 */
-            padding-bottom: 24px; /* 增加底部外边距 */
-        }
-        h2 {            
-            font-size: 35px;       /* 固定字体大小 */
-            font-weight: 200;         /* 细字体 */
-        }
-        .text-b{
-            font-size: 14px;       /* 固定字体大小 */
-            font-weight: 200;         /* 细字体 */
-        }
-        h1{
-            font-weight: 300;         /* 细字体 */
-            font-size: 43px;       /* 固定字体大小 */
-        }
-        .description .description-a{
-            font-weight: 400;         /* 细字体 */
-            font-size: 20px;       /* 固定字体大小 */
-        }
-        .description-a{
-            color: rgb(178,178,178);
-
-        }
-        .description{
-            color: rgb(107,107,107);            
-            margin-bottom: 15px; /* 增加底部外边距 */
-        }
-
-    </style>
+    <link rel="stylesheet" href="lhl.css">
 </head>
+<style>
+body {
+    margin: 0;            /* 移除body默认外边距 */
+    padding: 0;           /* 移除body默认内边距 */
+    font-family: Arial, sans-serif;  /* 设置字体 */
+    position: relative;   /* 相对定位，作为子元素的参考点 */
+}
+
+.content-wrapper {
+    position: relative;   /* 相对定位 */
+    width: 100%;          /* 图片宽度占满父容器 */
+    height: 100%;         /* 图片高度占满父容器 */
+    background-image: url("img1/30th-anniversary-hub-background-desktop-04-en-02oct24.webp"); /* 直接设置背景图片 */
+    background-size: contain; /* 保持背景图片比例，确保完全显示 */
+    user-select: none;
+}
+
+
+.content {
+    position: relative;   /* 相对定位 */
+    height: 433px;
+    z-index: 1;           /* 层级设为1 */
+    max-width: 1200px;    /* 最大宽度限制 */
+    margin: 0 auto;       /* 水平居中 */
+    display: flex;        /* 弹性布局 */
+    align-items: center;  /* 垂直居中对齐 */
+    justify-content: space-between; /* 两端对齐 */
+    overflow: hidden;     /* 隐藏溢出内容 */
+}
+
+.button {
+    all: unset;               /* 重置所有继承的样式 */
+    display: inline-block;    /* 设置为行内块元素 */
+    background-color: #0070cc; /* 设置背景色为蓝色 */
+    color: white;              /* 文字颜色为白色 */
+    padding: 10px 20px;        /* 上下10px，左右20px的内边距 */
+    border-radius: 20px;       /* 圆角效果 */
+    cursor: pointer;           /* 鼠标悬停时显示手型 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
+    text-align: center;        /* 文字居中 */
+
+}
+
+.button:hover {
+    background-color: rgb(0, 90, 170); /* 悬停时背景色变深 */
+    border: 2px solid white;  /* 悬停时显示白色边框 */
+    box-shadow: 0 0 8px rgba(0,112,204); /* 悬停时添加蓝色光晕 */
+}
+
+.Image {
+    width: 1000px;         /* 设置宽度 */
+    height: 237px;        /* 设置高度 */
+    order: 2;             /* 在flex布局中排在第二位 */
+}
+
+.Image img {
+    width: 100%;          /* 图片宽度占满父容器 */
+    height: 100%;         /* 图片高度占满父容器 */
+    object-fit: contain;  /* 保持图片比例，确保完全显示 */
+}
+
+.title {
+    font-size: 24px;      /* 字体大小 */
+    margin-bottom: 15px;  /* 下方外边距 */
+    font-weight: bold;    /* 粗体文字 */
+    display: flex;        /* 弹性布局 */
+}
+.background {
+    position: relative;   /* 相对定位 */
+    height: 527px;
+    margin: 0 auto;       /* 水平居中 */
+    display: flex;        /* 弹性布局 */
+    align-items: center;  /* 垂直居中对齐 */
+    background-image: url("img1/image.png"); /* 设置背景图片 */
+    background-size: cover; /* 背景图片覆盖整个容器 */
+    background-position: center; /* 背景图片居中 */
+    padding: 20px;         /* 内边距 */
+    color: white;          /* 文字颜色 */
+}
+
+.background .text {
+    font-size: 24px;       /* 字体大小 */
+    line-height: 1.5;      /* 行高 */
+    margin-right: 20px;    /* 右侧外边距 */
+    margin: 0 auto;       /* 水平居中 */
+    text-align: left;      /* 文本左对齐 */
+    padding-right: 40%;     /* 左侧内边距，调整居中偏左 */
+}
+.a{
+    position: relative; /* 设置父元素为相对定位 */
+    background-color: #26254f;
+    height: 426px;
+    display: flex;            /* 使用弹性布局 */
+    flex-direction: row;      /* 水平排列子元素 */
+    align-items: center;      /* 垂直居中对齐 */
+    justify-content: center;  /* 水平居中对齐 */
+    flex-wrap: nowrap;        /* 不允许换行 */
+}
+
+.text-a {
+    align-self: center;       /* 垂直居中对齐 */
+    margin-top: auto;         /* 位于底部 */
+    padding: 14px;            /* 内边距 */
+    font-size: 14px;          /* 文字大小 */
+    color: black;             /* 文字颜色 */
+    background-color: white; /* 背景色 */
+    padding: 10px 24px;       /* 内边距 */
+    border-radius: 40px;      /* 圆角效果 */
+    cursor: pointer;          /* 鼠标悬停时显示手型 */
+    margin-right: 10px;       /* 右侧外边距 */
+    border: 2px solid transparent; /* 透明边框 */
+    font-weight: 600;         /* 细字体 */
+}
+.text-a:hover {
+    border: 2px solid #26254f;  /* 悬停时显示白色边框 */
+    box-shadow: 0 0 8px white; /* 悬停时添加蓝色光晕 */
+}
+.a > div {
+    display: flex;
+    flex-direction: column;   /* 垂直排列图片和文字 */
+    align-items: center;      /* 水平居中对齐 */
+    margin: 10px;             /* 子元素间距 */
+}
+.a .text{
+    font-size: 16px;       /* 固定字体大小 */
+    color: white; 
+}
+.a img{
+    width: 209px;
+    height: 117px;
+    border-radius: 12px;
+
+}
+.b{
+    width: 490px;
+    height: 338px;
+    transition: transform 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* 添加过渡效果 */
+    
+}
+.b img{
+    width: 450px;
+    height: 238px;
+}
+
+.b:hover {
+    transform: translateY(-10px); /* 上浮效果 */
+    background-color: rgba(0, 0, 0, 0.5); /* 背景变暗 */
+    border: 2px solid white; /* 白色边框 */
+    border-radius: 12px; /* 圆角效果 */
+}
+.c{
+    background-color: #26254f;
+    display: flex;            /* 使用弹性布局 */
+    flex-direction: row;      /* 水平排列子元素 */
+    align-items: center;      /* 垂直居中对齐 */
+    justify-content: center;  /* 水平居中对齐 */
+    flex-wrap: wrap;          /* 允许换行 */
+    padding-bottom: 24px; /* 增加底部外边距 */
+}
+h2 {            
+    font-size: 35px;       /* 固定字体大小 */
+    font-weight: 200;         /* 细字体 */
+}
+.text-b{
+    font-size: 14px;       /* 固定字体大小 */
+    font-weight: 200;         /* 细字体 */
+}
+h1{
+    font-weight: 300;         /* 细字体 */
+    font-size: 43px;       /* 固定字体大小 */
+}
+.description .description-a{
+    font-weight: 400;         /* 细字体 */
+    font-size: 20px;       /* 固定字体大小 */
+}
+.description-a{
+    color: rgb(178,178,178);
+
+}
+.description{
+    color: rgb(107,107,107);            
+    margin-bottom: 15px; /* 增加底部外边距 */
+}
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #0070cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    position: absolute; /* 改为绝对定位 */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.circle{
+    font-size: 14px;          /* 文字大小 */
+    color: black;             /* 文字颜色 */
+    background-color: white; /* 背景色 */
+    border-radius: 40px;      /* 圆角效果 */
+    cursor: pointer;          /* 鼠标悬停时显示手型 */
+    margin-right: 10px;       /* 右侧外边距 */
+    border: 2px solid transparent; /* 透明边框 */
+}
+.circle:hover {
+    border: 2px solid #26254f;  /* 悬停时显示白色边框 */
+    box-shadow: 0 0 8px white; /* 悬停时添加蓝色光晕 */
+}
+.left-arrow {
+    left: 10px; /* 固定在页面左侧 */
+}
+
+.right-arrow {
+    right: 10px; /* 固定在页面右侧 */
+}
+</style>
 <body>
     <div class="content-wrapper">
         <div class="content">
@@ -205,7 +241,7 @@
             </div>
             
             <div class="Image">
-                <img src="img/30th-anniversary-logo-01-en-21aug24 (1).webp">
+                <img src="img1/30th-anniversary-logo-01-en-21aug24 (1).webp">
             </div>
         </div>
     </div>
@@ -217,23 +253,30 @@
         </div>
     </div>
     
+
     <div class="a">
+        <div class="circle left-arrow">
+            <span><</span>
+        </div>
         <div class="b">
-            <img src="img/doom-the-dark-ages-screenshot-09-en-10june24.webp">
+            <img src="img1/doom-the-dark-ages-screenshot-09-en-10june24.webp">
             <div class="text">
                 <p>新作ゲームタイトル</p> 
                 <p class="text-b">『DOOM: The Dark Ages』を始めとした、今月の新作游戏タイトルをチェックしましょう。</p>
             </div>
         </div>
         <div class="b">
-            <img src="img/COD-BLOPS-6-warzone-season-3-keyart-01-en-26mar25$en.webp">
+            <img src="img1/COD-BLOPS-6-warzone-season-3-keyart-01-en-26mar25$en.webp">
             <div class="text">
                 <p>最新アップデート</p> 
                 <p class="text-b">『Call of Duty: Warzone』のシーズン3を始めとする、今月の注目イベントをチェックしましょう。</p>
             </div>
         </div>
-
+        <div class="circle right-arrow">
+            <span>></span>
+        </div>
     </div>
+
     <div class="c">
         <div class="text-a">
 
